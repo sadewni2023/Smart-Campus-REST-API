@@ -1,0 +1,24 @@
+# Compiled class files
+target/
+*.class
+
+# Log files
+*.log
+
+# BlueJ files
+*.ctxt
+
+# IDE specific files
+.idea/
+.netbeans/
+nbproject/
+nb-configuration.xml
+nbactions.xml
+.classpath
+.project
+.settings/
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
