@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Sensor {
-    private String id; // Unique identifier, e.g., "TEMP-001"
-    private String type; // Category, e.g., "Temperature", "Occupancy", "CO2"
-    private String status; // Current state: "ACTIVE", "MAINTENANCE", or "OFFLINE"
+    private String id; // Unique identifier
+    private String type; // Category
+    private String status; // Current state
     private double currentValue; // The most recent measurement recorded
     private String roomId; // Foreign key linking to the Room where the sensor is located
     private Map<String, String> links = new HashMap<>(); // HATEOAS links

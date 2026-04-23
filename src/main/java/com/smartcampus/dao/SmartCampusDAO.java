@@ -10,10 +10,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
-/**
- * Thread-safe In-memory DAO for Smart Campus data.
- * Used to satisfy the requirement of not using an external database.
- */
+
 public class SmartCampusDAO {
     private static SmartCampusDAO instance;
     
@@ -22,7 +19,6 @@ public class SmartCampusDAO {
     private final Map<String, List<SensorReading>> readings = new ConcurrentHashMap<>();
 
     private SmartCampusDAO() {
-        // Initialize with some dummy data if needed
         initializeData();
     }
 
@@ -97,7 +93,6 @@ public class SmartCampusDAO {
     // Reading Operations
     public List<SensorReading> getReadingsForSensor(String sensorId) {
         List<SensorReading> sensorReadings = readings.getOrDefault(sensorId, new ArrayList<>());
-        // Sort by timestamp descending (newest first) for better UX
         return sensorReadings.stream()
                 .sorted((r1, r2) -> Long.compare(r2.getTimestamp(), r1.getTimestamp()))
                 .collect(Collectors.toList());
@@ -108,7 +103,7 @@ public class SmartCampusDAO {
         if (sensorReadings != null) {
             sensorReadings.add(reading);
             
-            // Side effect: update sensor's current value
+            // update sensor's current value
             Sensor sensor = sensors.get(sensorId);
             if (sensor != null) {
                 sensor.setCurrentValue(reading.getValue());

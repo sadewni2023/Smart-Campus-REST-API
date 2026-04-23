@@ -7,7 +7,7 @@
     <groupId>com.smartcampus</groupId>
     <artifactId>smart-campus-api</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>”Smart Campus” Sensor &amp; Room Management API</name>
+    <name>"Smart Campus" Sensor &amp; Room Management API</name>
     <description>RESTful API for Smart Campus Sensor and Room Management</description>
 
     <properties>

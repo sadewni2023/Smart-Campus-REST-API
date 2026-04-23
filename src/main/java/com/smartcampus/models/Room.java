@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.Map;
 
 public class Room {
-    private String id; // Unique identifier, e.g., "LIB-301"
-    private String name; // Human-readable name, e.g., "Library Quiet Study"
-    private int capacity; // Maximum occupancy for safety regulations
+    private String id; // Unique identifier
+    private String name; // Human-readable name
+    private int capacity; // Maximum occupancy
     private List<String> sensorIds = new ArrayList<>(); // Collection of IDs of sensors deployed in this room
     private Map<String, String> links = new HashMap<>(); // HATEOAS links
 

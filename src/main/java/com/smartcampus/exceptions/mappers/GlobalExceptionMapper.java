@@ -13,13 +13,10 @@ public class GlobalExceptionMapper implements ExceptionMapper<Throwable> {
 
     @Override
     public Response toResponse(Throwable exception) {
-        // If the exception is a JAX-RS WebApplicationException (like 404, 400, etc.),
-        // we should respect its predefined response.
         if (exception instanceof jakarta.ws.rs.WebApplicationException) {
             return ((jakarta.ws.rs.WebApplicationException) exception).getResponse();
         }
 
-        // Detailed logging for truly unexpected logic errors (Internal Server Errors)
         LOGGER.log(java.util.logging.Level.SEVERE, "Unexpected Logic Error Caught: ", exception);
 
         Map<String, String> error = new HashMap<>();
